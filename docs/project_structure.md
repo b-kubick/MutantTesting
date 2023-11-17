@@ -5,7 +5,7 @@
     - Polynomial.py         # Contains the Polynomial class definition
     - MutationOperators.py  # Module with mutation operator implementations
   - tests/
-    - PolyTest.py           # Unit tests for the Polynomial class
+    - test_poly.py           # Unit tests for the Polynomial class
   - mutated/
     - Polynomial_Mutant1.py # Mutant version of Polynomial (e.g., coefficient mutation)
     - Polynomial_Mutant2.py # Mutant version of Polynomial (e.g., arithmetic operation mutation)
