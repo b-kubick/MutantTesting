@@ -121,3 +121,6 @@ poly = Polynomial([1, 0, -2])  # Represents x^2 - 2
 print(f"Evaluation of poly at a,b: {poly.evaluate(0)}, {poly.evaluate(5)}")
 root = poly.find_root_bisection(0, 5)
 print(f"Root of {poly} within [0, 5]: {root}")
+
+
+
