@@ -51,4 +51,5 @@
 - **Submission**: Zip or tarball the entire folder and submit.
 
 
-pytest --cov=Polynomial --cov=MutationOperators mutationTestCases.py
+pytest --cov=Polynomial --cov=MutationOperators mutationTestCases.py 
+.
