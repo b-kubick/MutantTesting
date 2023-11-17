@@ -1,41 +1,47 @@
-# Mutation Testing for Polynomial Class
+# Mutation Testing Report for Polynomial Class
 
-## Set up the Environment
+## Introduction
 
-- **Access Requirements**: Ensure access to the `Polynomial` class, your unit tests, and the `pytest` testing framework.
+Mutation testing is designed to evaluate the effectiveness of a test suite by introducing small changes, or mutations, to a program's source code. The goal is to ensure that the test suite catches these deliberate faults, affirming its robustness and coverage.
 
-## Define Mutation Operators
+## List of Defined Mutation Operators
 
-- **Operator Identification**: Identify and define specific mutation operators for the `Polynomial` class.
-- **Documentation**: Each operator should be well-documented.
-- **Examples**: Operators may include changing coefficients, modifying arithmetic operations, introducing redundant code, etc.
+The following mutation operators were applied to the Polynomial class:
 
-## Implement Mutation Operators
+- **Coefficient Mutation**: Changes each coefficient by incrementing it by 1.
+- **Arithmetic Operation Mutation**: Inverts the addition operation to subtraction in the `__add__` method.
+- **Control Flow Mutation**: Modifies the convergence condition in the root-finding method.
+- **Redundant Code Insertion**: Introduces a non-functional, no-operation loop in the evaluate method.
+- **Boundary Value Mutation**: Alters the boundary values in the root-finding method by a small margin.
 
-- **Implementation**: Implement the mutation operators as methods in a separate Python module or script.
-- **Modification Method**: These methods should modify the `Polynomial` class source code according to the defined mutation operators.
-- **Examples and Usage**: Provide clear examples of how these operators should be applied.
+## Description of Applied Mutations and Their Impact
 
-## Apply Mutations
+- **Coefficient Mutation**: Tests if polynomials with altered coefficients are handled correctly, impacting evaluation and arithmetic operations.
+- **Arithmetic Operation Mutation**: Verifies detection of incorrect arithmetic operations, affecting polynomial addition.
+- **Control Flow Mutation**: Checks logical flow validation in iterative methods, potentially causing false positives or negatives.
+- **Redundant Code Insertion**: Evaluates the test suite's ability to detect performance degradation, neutral to functional correctness but affecting performance.
+- **Boundary Value Mutation**: Assesses the test suite's handling of edge cases, testing the root-finding method against shifts in input range.
 
-- **Mutation Application**: Apply the defined mutation operators to the `Polynomial` class to create mutant versions.
-- **Mutant Variants**: Create multiple mutants, each representing a different mutation.
+## Summary of Mutant Survival and Killing
 
-## Run Tests on Mutants
+- The coefficient mutation was detected in polynomial evaluation and arithmetic operations.
+- The arithmetic operation mutation was killed, as tests verifying addition operation failed.
+- The control flow mutation was not consistently detected due to its subtle nature.
+- The redundant code insertion went undetected as tests do not measure performance.
+- The boundary value mutation survived in some cases, highlighting a gap in the test suite.
 
-- **Testing**: Run your unit tests on each mutant version of the `Polynomial` class.
-- **Outcomes**: Determine whether the mutants survive (test cases fail to detect the mutation) or are killed (test cases identify the mutation).
+## Analysis of the Test Suite's Effectiveness
 
-## Analyze Results
+The test suite effectively caught mutations leading to direct functional discrepancies. However, it was less effective against performance issues and subtle logical changes, indicating a need for enhancement in non-functional aspects and control flow scenarios.
 
-- **Results Analysis**: Analyze the results of the mutation testing.
-- **Survival and Killing**: Identify which mutants survived and which were killed.
-- **Mutation Classification**: Classify mutations into categories based on impact (e.g., harmless, equivalent, serious).
+## Recommendations for Improving the Test Suite
 
-## Improve the Test Suite
+- Incorporate performance benchmarks for detecting inefficiencies.
+- Develop more granular tests around control flow.
+- Include boundary value tests asserting against a wider range of inputs.
 
-- **Test Suite Revision**: Revise your test suite based on the mutation testing results.
-- **Enhancing Coverage**: Add new test cases or modify existing ones to improve test coverage.
+## Conclusion
+
 
 ## Write a Report
 
@@ -53,3 +59,6 @@
 
 pytest --cov=Polynomial --cov=MutationOperators mutationTestCases.py 
 .
+
+The mutation testing process revealed strengths and weaknesses within the Polynomial class's test suite. While adept at catching clear functional faults, it needs further development for sensitivity to performance issues and logical subtleties. Targeted enhancements can make the test suite more comprehensive, ensuring higher confidence in the Polynomial class's correctness and efficiency.
+
