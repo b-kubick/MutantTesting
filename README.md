@@ -42,23 +42,11 @@ The test suite effectively caught mutations leading to direct functional discrep
 
 ## Conclusion
 
+The mutation testing process revealed strengths and weaknesses within the Polynomial class's test suite. While it is adept at catching clear functional faults, it requires further development to improve its sensitivity to performance issues and logical subtleties. With targeted enhancements, the test suite can be made more comprehensive, ensuring a higher degree of confidence in the Polynomial class's correctness and efficiency.
 
-## Write a Report
-
-- **Report Content**: Write a comprehensive report summarizing the mutation testing process.
-  - Introduction
-  - List of defined mutation operators
-  - Description of applied mutations and their impact
-  - Summary of mutant survival and killing
-  - Analysis of the test suite's effectiveness
-  - Recommendations for improving the test suite
-  - Conclusion
-- **Report Format**: The report should be in a README.md file in the root of the folder where analysis was performed.
-- **Submission**: Zip or tarball the entire folder and submit.
 
 
 pytest --cov=Polynomial --cov=MutationOperators mutationTestCases.py 
-.
 
-The mutation testing process revealed strengths and weaknesses within the Polynomial class's test suite. While adept at catching clear functional faults, it needs further development for sensitivity to performance issues and logical subtleties. Targeted enhancements can make the test suite more comprehensive, ensuring higher confidence in the Polynomial class's correctness and efficiency.
+
 
