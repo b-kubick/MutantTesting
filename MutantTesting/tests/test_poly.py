@@ -1,5 +1,5 @@
 import sys
-sys.path.append ('./polynomial')  # Add the parent directory to the Python path
+sys.path.append ('../polynomial')  # Add the parent directory to the Python path
 
 from Polynomial import Polynomial  # Import the Polynomial class from your module
 
